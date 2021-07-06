@@ -1,22 +1,29 @@
 {
-  "name": "resume-site",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/react": "17.0.13",
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1",
-    "typescript": "4.3.5"
-  }
+    "name": "resume-site",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "build:css": "postcss styles/tailwind.css -o styles/globals.css",
+        "build:watch": "postcss styles/tailwind.css -o styles/globals.css --watch",
+        "prod:build": "NODE_ENV=production yarn run build:css && yarn run build"
+    },
+    "dependencies": {
+        "autoprefixer": "^10.2.6",
+        "next": "11.0.1",
+        "postcss": "^8.3.5",
+        "postcss-cli": "^8.3.1",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "tailwindcss": "^2.2.4"
+    },
+    "devDependencies": {
+        "@types/react": "17.0.13",
+        "eslint": "7.30.0",
+        "eslint-config-next": "11.0.1",
+        "typescript": "4.3.5"
+    }
 }
