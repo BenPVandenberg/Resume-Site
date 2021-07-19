@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import Navbar from '../components/Navbar';
-import { PATHS } from '../utilities/Constants';
+import styles from '../styles/Home.module.css';
+import { PATHS } from '../utilities/constants';
 
 export default function Home() {
     return (
@@ -42,7 +42,7 @@ export default function Home() {
                             }}
                         >
                             <motion.h1 className={styles.title}>
-                            {"I'm Ben Vandenberg."}
+                                {"I'm Ben Vandenberg."}
                             </motion.h1>
 
                             <motion.p className={styles.description}>
