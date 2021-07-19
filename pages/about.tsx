@@ -7,7 +7,7 @@ export default function About() {
     return (
         <div className={styles.root}>
             <Head>
-                <title>Ben Vandenberg: About</title>
+                <title>Ben Vandenberg:About</title>
                 <meta name='description' content='A resume site' />
                 <link rel='icon' href='/favicon.ico' />
             </Head>

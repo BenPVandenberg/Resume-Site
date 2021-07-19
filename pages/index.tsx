@@ -15,7 +15,7 @@ export default function Home() {
 
             <main>
                 <div id='home' className={styles.home}>
-                    <Navbar links={PATHS} currentPage={'Resume'} />
+                    <Navbar links={PATHS} currentPage={'Home'} />
                     <AnimatePresence>
                         <motion.div
                             id='topText'
