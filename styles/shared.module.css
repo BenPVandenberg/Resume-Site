@@ -1,0 +1,31 @@
+.root {
+    @apply text-white;
+    background: url('../public/background.jpg') top center;
+    @apply h-screen;
+}
+
+.main {
+    @apply h-full;
+}
+
+.home {
+    @apply h-full;
+}
+
+.text {
+    @apply text-center;
+    @apply mx-auto;
+    @apply w-4/5;
+}
+
+.title {
+    @apply text-7xl;
+    @apply h-1/5;
+    @apply underline;
+}
+
+.description {
+    @apply text-2xl;
+    @apply w-4/6;
+    @apply mx-auto;
+}

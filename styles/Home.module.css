@@ -1,22 +1,10 @@
-.root {
-    @apply text-white;
-}
-
-.home {
-    background: url('../public/background.jpg') top center;
-    @apply h-screen;
-}
-
 .text {
     @apply flex flex-col;
+    @apply justify-center;
     @apply h-3/5;
-    @apply justify-center text-center;
 }
 
 .title {
-    @apply text-7xl pb-6;
-}
-
-.description {
-    @apply text-2xl;
+    @apply text-7xl;
+    @apply pb-6;
 }

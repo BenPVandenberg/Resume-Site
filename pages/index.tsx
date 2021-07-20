@@ -1,25 +1,29 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/home.module.css';
+import sharedStyles from '../styles/shared.module.css';
 import { PATHS } from '../utilities/constants';
 
 export default function Home() {
     return (
-        <div className={styles.root}>
+        <div className={sharedStyles.root}>
             <Head>
                 <title>Ben Vandenberg</title>
-                <meta name='description' content='A resume site' />
-                <link rel='icon' href='/favicon.ico' />
+                <meta
+                    name='description'
+                    content='A site to show off my work and projects.'
+                />
             </Head>
 
-            <main>
-                <div id='home' className={styles.home}>
-                    <Navbar links={PATHS} currentPage={'Home'} />
+            <main className={sharedStyles.main}>
+                <Navbar links={PATHS} currentPage={'Home'} />
+
+                <div id='home' className={sharedStyles.home}>
                     <AnimatePresence>
                         <motion.div
                             id='topText'
-                            className={styles.text}
+                            className={`${sharedStyles.text} ${styles.text}`}
                             initial='hidden'
                             animate='visible'
                             exit='hidden'
@@ -45,12 +49,10 @@ export default function Home() {
                                 {"I'm Ben Vandenberg."}
                             </motion.h1>
 
-                            <motion.p className={styles.description}>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quod modi sed expedita, nam
-                                cumque corrupti vero quis! Ea officia earum
-                                beatae eaque fuga eligendi provident ullam
-                                rerum, ad recusandae quam?
+                            <motion.p className={sharedStyles.description}>
+                                {
+                                    "I'm a Ottawa based software developer creating a variety of web, desktop, and cli apps. I have a strong intrest in computer and internet security."
+                                }
                             </motion.p>
                         </motion.div>
                     </AnimatePresence>
