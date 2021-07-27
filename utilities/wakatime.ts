@@ -3,14 +3,10 @@ import axios from 'axios';
 import { WakaTimeData } from './types';
 
 /**
- * PRIVATE VARIABLES
+ * PRIVATE VARIABLES + FUNCTIONS
  */
 
 let wakatimeData: WakaTimeData | null = null;
-
-/**
- * PRIVATE FUNCTIONS
- */
 
 /**
  * Fetch data from WakaTime API
@@ -29,14 +25,25 @@ async function getWakatimeData(): Promise<WakaTimeData> {
 }
 
 /**
+ * Get language stats from WakaTime API
+ * @return language stats
+ */
+async function getLanguageStats() {
+    const data = await getWakatimeData();
+    return data.languages;
+}
+
+/**
  * PUBLIC FUNCTIONS
  */
 
 /**
- * Get language stats from WakaTime API
- * @return language stats
+ * Get top languages
+ * @param count number of elements to return
  */
-export async function getLanguageStats() {
-    const data = await getWakatimeData();
-    return data.languages;
+export async function getTopLanguages(count = 10) {
+    const stats = await getLanguageStats();
+    const topLanguages = stats.slice(0, count);
+
+    return topLanguages;
 }
