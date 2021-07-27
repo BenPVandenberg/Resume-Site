@@ -1,3 +1,4 @@
 {
-    "css.validate": false // Disable css built-in lint
+    "css.validate": false,
+    "cSpell.words": ["WAKATIME", "Waka"]
 }
