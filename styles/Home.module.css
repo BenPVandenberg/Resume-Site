@@ -1,10 +1,7 @@
 .text {
-    @apply flex flex-col;
-    @apply justify-center;
     @apply h-3/5;
 }
 
 .title {
-    @apply text-7xl;
     @apply pb-6;
 }
