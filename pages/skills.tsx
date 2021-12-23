@@ -11,37 +11,8 @@ import {
     PATHS,
     TITLE_ANIMATION,
 } from '../utilities/constants';
-import { Language } from '../utilities/types';
-import { getTopLanguages } from '../utilities/wakatime';
-
-const graphData = {
-    labels: [''],
-    datasets: [
-        {
-            data: [0],
-            backgroundColor: BAR_COLOURS,
-            hoverBackgroundColor: BAR_OUTLINE_COLOURS,
-        },
-    ],
-};
 
 export default function Skills() {
-    const [languageData, setLanguageData] = useState<Language[]>([]);
-
-    // fetch the latest data from the backend
-    const updateLanguageData = async () => {
-        const topTen = await getTopLanguages();
-
-        graphData.labels = topTen.map(({ name }) => name);
-        graphData.datasets[0].data = topTen.map(({ percent }) => percent);
-
-        setLanguageData(topTen);
-    };
-
-    useEffect(() => {
-        updateLanguageData();
-    }, []);
-
     return (
         <div className={sharedStyles.root}>
             <Head>
@@ -69,19 +40,24 @@ export default function Skills() {
                             </motion.h1>
 
                             <motion.p className={sharedStyles.description}>
-                                {'A display of my most used languages and tools. ' +
-                                    "This page uses WakaTime's api to stay up-to-date."}
+                                {
+                                    'A display of my most used languages and tools.'
+                                }
                             </motion.p>
                         </motion.div>
 
-                        <div>
-                            <Bar
-                                data={graphData}
-                                height={200}
-                                width={200}
-                                options={{ maintainAspectRatio: false }}
-                            />
-                        </div>
+                        <figure>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/6e6a6ed8-a1c2-45cd-b797-674d4f321c31.svg'></embed>
+                        </figure>
+                        <figure>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/e9c338b5-b492-40f3-af30-664ddb1472af.svg'></embed>
+                        </figure>
+                        <figure>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/58e94ffc-77a8-4129-8f1b-4750241f310d.svg'></embed>
+                        </figure>
+                        <figure>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/d5e43372-9d2d-488d-861a-a9ef16ce87e9.svg'></embed>
+                        </figure>
                     </AnimatePresence>
                 </div>
             </main>
