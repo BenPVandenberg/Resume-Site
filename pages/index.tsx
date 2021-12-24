@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import styles from '../styles/home.module.css';
@@ -7,7 +7,7 @@ import { PATHS, TITLE_ANIMATION } from '../utilities/constants';
 
 export default function Home() {
     return (
-        <div className={sharedStyles.root}>
+        <main>
             <Head>
                 <title>Ben Vandenberg</title>
                 <meta
@@ -16,7 +16,7 @@ export default function Home() {
                 />
             </Head>
 
-            <main className={sharedStyles.main}>
+            <div className={sharedStyles.root}>
                 <Navbar links={PATHS} currentPage={'Home'} />
 
                 <div id='home' className={sharedStyles.home}>
@@ -35,13 +35,13 @@ export default function Home() {
                             <motion.p className={sharedStyles.description}>
                                 {"I'm a Ottawa based software developer " +
                                     'creating a variety of web, desktop, ' +
-                                    'and cli apps. I have a strong intrest ' +
+                                    'and CLI apps. I have a strong intrest ' +
                                     'in computer and internet security.'}
                             </motion.p>
                         </motion.div>
                     </AnimatePresence>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     );
 }

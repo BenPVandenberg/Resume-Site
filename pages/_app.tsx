@@ -3,7 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
     return (
         <div>
             <Head>
@@ -31,4 +31,3 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
     );
 }
-export default MyApp;

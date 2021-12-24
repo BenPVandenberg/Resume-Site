@@ -1,13 +1,13 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
-import styles from '../styles/work.module.css';
 import sharedStyles from '../styles/shared.module.css';
+import styles from '../styles/work.module.css';
 import { PATHS, TITLE_ANIMATION } from '../utilities/constants';
 
 export default function Resume() {
     return (
-        <div className={sharedStyles.root}>
+        <main>
             <Head>
                 <title>Ben Vandenberg: Work</title>
                 <meta
@@ -16,7 +16,7 @@ export default function Resume() {
                 />
             </Head>
 
-            <main className={sharedStyles.main}>
+            <div className={sharedStyles.root}>
                 <Navbar links={PATHS} currentPage={'Work'} />
 
                 <div id='home' className={sharedStyles.home}>
@@ -40,7 +40,7 @@ export default function Resume() {
                         </motion.div>
                     </AnimatePresence>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     );
 }
