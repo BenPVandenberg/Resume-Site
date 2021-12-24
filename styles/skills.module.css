@@ -1,3 +1,13 @@
 .title {
     @apply pb-10;
 }
+
+/* automatically determine number of columns  */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    grid-gap: 10px;
+    @apply pb-10;
+    @apply w-11/12;
+    @apply mx-auto;
+}

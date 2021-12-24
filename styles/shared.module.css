@@ -1,15 +1,13 @@
 .root {
     @apply text-white;
-    background: url('../public/background.jpg') top center;
-    @apply h-screen;
-}
-
-.main {
+    @apply min-h-screen;
     @apply h-full;
+    background: url('../public/background.jpg') top center no-repeat;
+    background-size: cover;
 }
 
 .home {
-    @apply h-full;
+    @apply h-5/6;
 }
 
 .text {
@@ -28,4 +26,5 @@
     @apply text-2xl;
     @apply w-4/6;
     @apply mx-auto;
+    @apply pb-10;
 }
