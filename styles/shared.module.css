@@ -2,12 +2,9 @@
 }
 
 .home {
-    @apply h-5/6;
 }
 
 .text {
-    @apply flex flex-col;
-    @apply justify-center;
     @apply text-center;
     @apply mx-auto;
     @apply w-4/5;

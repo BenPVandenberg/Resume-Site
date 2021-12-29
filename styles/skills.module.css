@@ -4,7 +4,7 @@
 
 /* automatically determine number of columns  */
 .gridContainer {
-    display: grid;
+    @apply grid;
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     grid-gap: 10px;
     @apply pb-10;
