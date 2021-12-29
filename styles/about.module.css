@@ -1,3 +1,33 @@
+.a {
+    @apply text-blue-500;
+    @apply hover:text-gray-400;
+}
+
 .text {
     @apply h-3/5;
+}
+
+.experienceBox {
+    @apply flex;
+    @apply bg-gray-800;
+    @apply bg-opacity-90;
+    @apply rounded-3xl;
+    @apply p-2;
+    @apply m-2;
+}
+
+.experienceImage {
+    @apply h-40;
+    @apply rounded-3xl;
+    @apply mr-5;
+
+    /* center vertically */
+    @apply mt-auto;
+    @apply mb-auto;
+}
+
+.experienceText {
+    @apply font-semibold;
+    @apply text-xl;
+    @apply text-left;
 }
