@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
-import styles from '../styles/home.module.css';
+import styles from '../styles/index.module.css';
 import sharedStyles from '../styles/shared.module.css';
 import { PATHS, TITLE_ANIMATION } from '../utilities/constants';
 
@@ -19,11 +19,11 @@ export default function Home() {
             <div className={sharedStyles.root}>
                 <Navbar links={PATHS} currentPage={'Home'} />
 
-                <div id='home' className={sharedStyles.home}>
+                <div id='home' className={styles.home}>
                     <AnimatePresence>
                         <motion.div
                             id='topText'
-                            className={`${sharedStyles.text} ${styles.text}`}
+                            className={sharedStyles.text}
                             {...TITLE_ANIMATION}
                         >
                             <motion.h1
