@@ -1,9 +1,4 @@
 .root {
-    @apply text-white;
-    @apply min-h-screen;
-    @apply h-full;
-    background: url('../public/background.jpg') top center no-repeat;
-    background-size: cover;
 }
 
 .home {
