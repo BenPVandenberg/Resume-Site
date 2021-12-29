@@ -3,7 +3,6 @@ import { Path } from '../components/Navbar';
 export const PATHS: Path[] = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    { label: 'Work', href: '/work' },
     { label: 'Skills', href: '/skills' },
 ];
 
