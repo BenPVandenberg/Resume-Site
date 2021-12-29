@@ -6,7 +6,7 @@ export interface Path {
     href: string;
 }
 
-interface NavbarProps {
+export interface NavbarProps {
     links: Path[];
     currentPage: string;
 }
