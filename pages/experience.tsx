@@ -1,20 +1,20 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
-import styles from '../styles/about.module.css';
+import styles from '../styles/experience.module.css';
 import sharedStyles from '../styles/shared.module.css';
 import { PATHS, TITLE_ANIMATION } from '../utilities/constants';
 
-export default function About() {
+export default function Experience() {
     return (
         <main>
             <Head>
-                <title>Ben Vandenberg: About</title>
-                <meta name='description' content='About me' />
+                <title>Ben Vandenberg: Experience</title>
+                <meta name='description' content='My Experience' />
             </Head>
 
             <div className={sharedStyles.root}>
-                <Navbar links={PATHS} currentPage={'About'} />
+                <Navbar links={PATHS} currentPage={'Experience'} />
 
                 <div id='home' className={sharedStyles.home}>
                     <AnimatePresence>
@@ -26,7 +26,7 @@ export default function About() {
                             <motion.h1
                                 className={`${sharedStyles.title} ${styles.title}`}
                             >
-                                About Me
+                                My Experience
                             </motion.h1>
 
                             <motion.h2 className={styles.header}>
