@@ -3,8 +3,18 @@
     @apply hover:text-gray-400;
 }
 
-.text {
-    @apply h-3/5;
+.body {
+    @apply w-3/5;
+}
+
+.title {
+    @apply pb-8;
+}
+
+.header {
+    @apply text-4xl;
+    @apply pt-7;
+    @apply pb-4;
 }
 
 .experienceBox {

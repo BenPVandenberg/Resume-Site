@@ -23,7 +23,7 @@ export default function Skills() {
                     <AnimatePresence>
                         <motion.div
                             id='topText'
-                            className={sharedStyles.text}
+                            className={sharedStyles.body}
                             {...TITLE_ANIMATION}
                         >
                             <motion.h1

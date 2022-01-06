@@ -20,16 +20,18 @@ export default function About() {
                     <AnimatePresence>
                         <motion.div
                             id='topText'
-                            className={`${sharedStyles.text} ${styles.text}`}
+                            className={`${sharedStyles.body} ${styles.body}`}
                             {...TITLE_ANIMATION}
                         >
-                            <motion.h1 className={sharedStyles.title}>
+                            <motion.h1
+                                className={`${sharedStyles.title} ${styles.title}`}
+                            >
                                 About Me
                             </motion.h1>
 
-                            <motion.p className={sharedStyles.description}>
+                            <motion.h2 className={styles.header}>
                                 School
-                            </motion.p>
+                            </motion.h2>
                             {/* Carleton University */}
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
@@ -59,9 +61,9 @@ export default function About() {
                                 </motion.div>
                             </motion.div>
 
-                            <motion.p className={sharedStyles.description}>
+                            <motion.h2 className={styles.header}>
                                 Work Experience
-                            </motion.p>
+                            </motion.h2>
                             {/* Irdeto */}
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
@@ -75,6 +77,34 @@ export default function About() {
                                         Software Developer - Coop
                                     </motion.p>
                                     <motion.p>Jan 2021 - Aug. 2021</motion.p>
+                                    <motion.p>
+                                        - Produced over 500 code contributions
+                                        (commits) of production code
+                                    </motion.p>
+                                    <motion.p>
+                                        - Wrote a sophisticated CLI tool using
+                                        the latest features of Python 3 and a
+                                        highly extensible modular design
+                                    </motion.p>
+                                    <motion.p>
+                                        - Rewrote a legacy Perl application
+                                        using good coding practices in Python 3
+                                    </motion.p>
+                                    <motion.p>
+                                        - 100% unit test coverage and
+                                        consistently maintained an exceptionally
+                                        high quality of work
+                                    </motion.p>
+                                    <motion.p>
+                                        - Worked with a variety of languages and
+                                        technologies, required learning skills
+                                        on the fly
+                                    </motion.p>
+                                    <motion.p>
+                                        - Maintained and created test
+                                        environments for end-to-end testing by
+                                        setting up servers in network
+                                    </motion.p>
                                 </motion.div>
                             </motion.div>
                             {/* Nokia */}
@@ -143,9 +173,9 @@ export default function About() {
                                 </motion.div>
                             </motion.div>
 
-                            <motion.p className={sharedStyles.description}>
+                            <motion.h2 className={styles.header}>
                                 Personal Projects
-                            </motion.p>
+                            </motion.h2>
                             {/* T&P Project */}
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
