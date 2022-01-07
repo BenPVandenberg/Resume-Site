@@ -6,6 +6,15 @@
     @apply pb-6;
 }
 
+.resumeButton {
+    @apply text-black;
+    background-color: #007fb1;
+    @apply rounded-full;
+    @apply p-2;
+    @apply font-bold;
+    @apply mt-2;
+}
+
 .social {
     @apply mx-2;
 }

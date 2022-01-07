@@ -30,17 +30,24 @@ export default function Home() {
                             <motion.h1
                                 className={`${sharedStyles.title} ${styles.title}`}
                             >
-                                {"I'm Ben Vandenberg."}
+                                I&apos;m Ben Vandenberg.
                             </motion.h1>
 
                             <motion.p className={sharedStyles.description}>
-                                {"I'm a Ottawa based software developer " +
-                                    'creating a variety of web, desktop, ' +
-                                    'and CLI apps. I have a strong intrest ' +
-                                    'in computer and internet security.'}
+                                I&apos;m a Ottawa based software developer
+                                creating a variety of web, desktop, and CLI
+                                apps. I have a strong intrest in computer and
+                                internet security.
                             </motion.p>
 
                             <motion.div>
+                                <a
+                                    className={`${styles.social} ${styles.resumeButton}`}
+                                    href='static/docs/BEN_VANDENBERG.pdf'
+                                >
+                                    Resume
+                                </a>
+
                                 <SocialIcon
                                     className={styles.social}
                                     url='mailto:lock.hackers01@icloud.com'
