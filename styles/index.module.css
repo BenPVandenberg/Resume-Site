@@ -1,4 +1,5 @@
 .home {
+    @apply lg:pt-16;
 }
 
 .title {

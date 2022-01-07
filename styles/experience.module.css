@@ -4,7 +4,8 @@
 }
 
 .body {
-    @apply w-3/5;
+    @apply xl:w-11/12;
+    @apply 2xl:w-4/6;
 }
 
 .title {
@@ -19,6 +20,11 @@
 
 .experienceBox {
     @apply flex;
+    @apply flex-col;
+
+    /* test */
+    @apply sm:flex-row;
+
     @apply bg-gray-800;
     @apply bg-opacity-90;
     @apply rounded-3xl;
@@ -29,11 +35,14 @@
 .experienceImage {
     @apply h-40;
     @apply rounded-3xl;
-    @apply mr-5;
 
-    /* center vertically */
-    @apply mt-auto;
-    @apply mb-auto;
+    /* center */
+    @apply mx-auto;
+
+    @apply sm:ml-2;
+    @apply sm:mr-5;
+    @apply sm:my-auto;
+    @apply sm:mr-5;
 }
 
 .experienceText {
