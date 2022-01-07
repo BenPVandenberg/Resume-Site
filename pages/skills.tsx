@@ -33,25 +33,24 @@ export default function Skills() {
                             </motion.h1>
 
                             <motion.p className={sharedStyles.description}>
-                                {
-                                    'A display of my most used languages and tools.'
-                                }
+                                A display of my most used languages and tools.
+                                Data collection started March 12, 2021
                             </motion.p>
                         </motion.div>
                     </AnimatePresence>
 
                     <div className={styles.gridContainer}>
                         <figure>
-                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/6e6a6ed8-a1c2-45cd-b797-674d4f321c31.svg'></embed>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/cf66bf54-ee48-4536-ae71-ce9f8847fb39.svg'></embed>
                         </figure>
                         <figure>
-                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/e9c338b5-b492-40f3-af30-664ddb1472af.svg'></embed>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/ff8d63ac-1162-4a70-98cd-4f7658d66e0d.svg'></embed>
                         </figure>
                         <figure>
-                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/58e94ffc-77a8-4129-8f1b-4750241f310d.svg'></embed>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/e3107cbc-32b1-4a0a-9bc7-97d4fb472b6f.svg'></embed>
                         </figure>
                         <figure>
-                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/d5e43372-9d2d-488d-861a-a9ef16ce87e9.svg'></embed>
+                            <embed src='https://wakatime.com/share/@0be2531b-4dd7-482a-8b03-7ebc76236fc7/5b32a517-3c50-43e7-a678-44673c2f8929.svg'></embed>
                         </figure>
                     </div>
                 </div>

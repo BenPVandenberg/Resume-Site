@@ -11,6 +11,8 @@ export interface NavbarProps {
     currentPage: string;
 }
 
+// TODO: styles to https://nextjs.org/docs/basic-features/built-in-css-support#css-in-js
+
 export default function Navbar(props: NavbarProps) {
     const [active, setActive] = useState(false);
 
