@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
+import { SocialIcon } from 'react-social-icons';
 import Navbar from '../components/Navbar';
 import styles from '../styles/index.module.css';
 import sharedStyles from '../styles/shared.module.css';
@@ -38,6 +39,22 @@ export default function Home() {
                                     'and CLI apps. I have a strong intrest ' +
                                     'in computer and internet security.'}
                             </motion.p>
+
+                            <motion.div>
+                                <SocialIcon
+                                    className={styles.social}
+                                    url='mailto:lock.hackers01@icloud.com'
+                                />
+                                <SocialIcon
+                                    className={styles.social}
+                                    url='https://www.linkedin.com/in/ben-vandenberg22/'
+                                />
+                                <SocialIcon
+                                    className={styles.social}
+                                    bgColor='#7f7f7f'
+                                    url='https://github.com/BenPVandenberg'
+                                />
+                            </motion.div>
                         </motion.div>
                     </AnimatePresence>
                 </div>

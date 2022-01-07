@@ -4,3 +4,7 @@
 .title {
     @apply pb-6;
 }
+
+.social {
+    @apply mx-2;
+}
