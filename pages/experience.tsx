@@ -36,7 +36,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='carleton.png'
+                                    src='static/images/carleton.png'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -68,7 +68,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='irdeto.jfif'
+                                    src='static/images/irdeto.jfif'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -111,7 +111,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='nokia.jpg'
+                                    src='static/images/nokia.jpg'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -156,7 +156,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='cra.jpg'
+                                    src='static/images/cra.jpg'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -180,7 +180,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='tap.png'
+                                    src='static/images/tap.png'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -249,7 +249,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='schedule.webp'
+                                    src='static/images/schedule.webp'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -284,7 +284,7 @@ export default function Experience() {
                             <motion.div className={styles.experienceBox}>
                                 <motion.img
                                     className={styles.experienceImage}
-                                    src='umpire.png'
+                                    src='static/images/umpire.png'
                                 />
 
                                 <motion.div className={styles.experienceText}>

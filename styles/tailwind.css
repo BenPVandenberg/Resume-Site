@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-    background: url('../public/background.jpg') top center no-repeat;
+    background: url('../public/static/images/background.jpg') top center
+        no-repeat;
     background-size: cover;
     @apply text-white;
     @apply min-h-screen;
