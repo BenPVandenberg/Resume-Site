@@ -40,7 +40,11 @@ export default function Experience() {
                                 />
 
                                 <motion.div className={styles.experienceText}>
-                                    <motion.p>Carleton University</motion.p>
+                                    <motion.h3
+                                        className={styles.experienceHeader}
+                                    >
+                                        Carleton University
+                                    </motion.h3>
                                     <motion.p>
                                         Bachelor of Computer Science: Computer
                                         and Internet Security
@@ -72,7 +76,11 @@ export default function Experience() {
                                 />
 
                                 <motion.div className={styles.experienceText}>
-                                    <motion.p>Irdeto</motion.p>
+                                    <motion.h3
+                                        className={styles.experienceHeader}
+                                    >
+                                        Irdeto
+                                    </motion.h3>
                                     <motion.p>
                                         Software Developer - Coop
                                     </motion.p>
@@ -115,7 +123,11 @@ export default function Experience() {
                                 />
 
                                 <motion.div className={styles.experienceText}>
-                                    <motion.p>Nokia</motion.p>
+                                    <motion.h3
+                                        className={styles.experienceHeader}
+                                    >
+                                        Nokia
+                                    </motion.h3>
                                     <motion.p>
                                         Software Developer - Coop
                                     </motion.p>
@@ -160,7 +172,11 @@ export default function Experience() {
                                 />
 
                                 <motion.div className={styles.experienceText}>
-                                    <motion.p>Canadian Revenue Agency</motion.p>
+                                    <motion.h3
+                                        className={styles.experienceHeader}
+                                    >
+                                        Canadian Revenue Agency
+                                    </motion.h3>
                                     <motion.p>Testing Analyst - Coop</motion.p>
                                     <motion.p>May 2019 - Aug 2019</motion.p>
                                     <motion.p>
@@ -186,7 +202,7 @@ export default function Experience() {
                                 <motion.div className={styles.experienceText}>
                                     <motion.p>
                                         <motion.a
-                                            className={styles.a}
+                                            className={`${styles.a} ${styles.experienceHeader}`}
                                             target={'_blank'}
                                             href='https://github.com/BenPVandenberg/TaP-Discord-Bot'
                                         >
@@ -226,7 +242,7 @@ export default function Experience() {
                                 <motion.div className={styles.experienceText}>
                                     <motion.p>
                                         <motion.a
-                                            className={styles.a}
+                                            className={`${styles.a} ${styles.experienceHeader}`}
                                             target={'_blank'}
                                             href='https://github.com/BenPVandenberg/blackjack-ai'
                                         >
@@ -255,7 +271,7 @@ export default function Experience() {
                                 <motion.div className={styles.experienceText}>
                                     <motion.p>
                                         <motion.a
-                                            className={styles.a}
+                                            className={`${styles.a} ${styles.experienceHeader}`}
                                             target={'_blank'}
                                             href='https://github.com/concastor/Schedule-Builder-CuHacking2020'
                                         >
@@ -290,7 +306,7 @@ export default function Experience() {
                                 <motion.div className={styles.experienceText}>
                                     <motion.p>
                                         <motion.a
-                                            className={styles.a}
+                                            className={`${styles.a} ${styles.experienceHeader}`}
                                             target={'_blank'}
                                             href='https://github.com/BenPVandenberg/EZ-Umpire'
                                         >
