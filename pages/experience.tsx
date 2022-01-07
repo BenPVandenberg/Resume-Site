@@ -56,7 +56,6 @@ export default function Experience() {
                                         {'CGPA: 10.25 A- '}
                                         <motion.a
                                             className={styles.a}
-                                            target='_blank'
                                             href='https://carleton.ca/academicadvising/cgpas/'
                                         >
                                             (12 point scale)
@@ -203,7 +202,6 @@ export default function Experience() {
                                     <motion.p>
                                         <motion.a
                                             className={`${styles.a} ${styles.experienceHeader}`}
-                                            target={'_blank'}
                                             href='https://github.com/BenPVandenberg/TaP-Discord-Bot'
                                         >
                                             T&P Project
@@ -243,7 +241,6 @@ export default function Experience() {
                                     <motion.p>
                                         <motion.a
                                             className={`${styles.a} ${styles.experienceHeader}`}
-                                            target={'_blank'}
                                             href='https://github.com/BenPVandenberg/blackjack-ai'
                                         >
                                             Blackjack AI
@@ -272,7 +269,6 @@ export default function Experience() {
                                     <motion.p>
                                         <motion.a
                                             className={`${styles.a} ${styles.experienceHeader}`}
-                                            target={'_blank'}
                                             href='https://github.com/concastor/Schedule-Builder-CuHacking2020'
                                         >
                                             Carleton Schedule Creator
@@ -307,7 +303,6 @@ export default function Experience() {
                                     <motion.p>
                                         <motion.a
                                             className={`${styles.a} ${styles.experienceHeader}`}
-                                            target={'_blank'}
                                             href='https://github.com/BenPVandenberg/EZ-Umpire'
                                         >
                                             EZ Umpire
