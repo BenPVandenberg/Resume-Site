@@ -50,7 +50,7 @@ export default function Home() {
 
                                 <SocialIcon
                                     className={styles.social}
-                                    url='mailto:lock.hackers01@icloud.com'
+                                    url='mailto:contact@benvandenberg.ca'
                                 />
                                 <SocialIcon
                                     className={styles.social}
