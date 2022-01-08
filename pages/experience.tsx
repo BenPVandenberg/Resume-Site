@@ -179,8 +179,8 @@ export default function Experience() {
                                     <motion.p>Testing Analyst - Coop</motion.p>
                                     <motion.p>May 2019 - Aug 2019</motion.p>
                                     <motion.p>
-                                        - Develop, prepare, and execute new and
-                                        revises existing testing conditions in
+                                        - Develop, prepare, execute new, and
+                                        revise existing testing conditions in
                                         order to test requested system
                                         specification changes/requirements made
                                         by functional areas.
