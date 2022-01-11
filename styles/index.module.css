@@ -1,5 +1,5 @@
 .home {
-    @apply lg:pt-16;
+    @apply sm:pt-32;
 }
 
 .title {

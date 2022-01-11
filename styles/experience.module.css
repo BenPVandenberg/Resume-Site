@@ -6,6 +6,7 @@
 .body {
     @apply xl:w-11/12;
     @apply 2xl:w-4/6;
+    max-width: 1815px;
 }
 
 .title {
@@ -22,7 +23,6 @@
     @apply flex;
     @apply flex-col;
 
-    /* test */
     @apply sm:flex-row;
 
     @apply bg-gray-800;
