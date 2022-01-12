@@ -26,6 +26,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 />
                 <link rel='icon' href='/favicon.ico' />
                 <link rel='manifest' href='/manifest.json' />
+
+                <meta
+                    property='og:image'
+                    content='/android-chrome-192x192.png'
+                />
             </Head>
             <Component {...pageProps} />
         </div>

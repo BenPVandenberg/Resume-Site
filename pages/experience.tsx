@@ -10,7 +10,10 @@ export default function Experience() {
         <main>
             <Head>
                 <title>Ben Vandenberg: Experience</title>
-                <meta name='description' content='My Experience' />
+                <meta
+                    name='description'
+                    content='A list of my cumulative experience'
+                />
             </Head>
 
             <div className={sharedStyles.root}>
