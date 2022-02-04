@@ -1,7 +1,7 @@
 {
     "extends": ["next", "next/core-web-vitals"],
     "rules": {
-        "indent": ["error", 4],
+        "indent": ["warning", 4, { "MemberExpression": "2" }],
         "camelcase": "error"
     }
 }
