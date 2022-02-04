@@ -40,6 +40,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/carleton.png'
+                                    alt='Carleton University Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -75,6 +76,8 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/irdeto.jfif'
+                                    alt='Irdeto Logo'
+                                    contentType='application/octet-stream'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -122,6 +125,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/nokia.jpg'
+                                    alt='Nokia Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -171,6 +175,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/cra.jpg'
+                                    alt='CRA Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -199,6 +204,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/tap.png'
+                                    alt='T&P Project Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -238,6 +244,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='https://repository-images.githubusercontent.com/427737208/5fab1b64-601f-46d9-808d-7ee97843b147'
+                                    alt='Blackjack AI Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -266,6 +273,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/schedule.webp'
+                                    alt='Carleton Schedule Creator Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
@@ -300,6 +308,7 @@ export default function Experience() {
                                 <motion.img
                                     className={styles.experienceImage}
                                     src='static/images/umpire.png'
+                                    alt='EZ Umpire Logo'
                                 />
 
                                 <motion.div className={styles.experienceText}>
