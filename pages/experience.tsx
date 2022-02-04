@@ -77,7 +77,6 @@ export default function Experience() {
                                     className={styles.experienceImage}
                                     src='static/images/irdeto.jfif'
                                     alt='Irdeto Logo'
-                                    contentType='application/octet-stream'
                                 />
 
                                 <motion.div className={styles.experienceText}>
