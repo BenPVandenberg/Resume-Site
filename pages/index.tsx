@@ -34,7 +34,7 @@ export default function Home() {
                             </motion.h1>
 
                             <motion.p className={sharedStyles.description}>
-                                I&apos;m a Ottawa based software developer
+                                I&apos;m a Lindsay, ON based software developer
                                 creating a variety of web, desktop, and CLI
                                 apps. I have a strong interest in computer and
                                 internet security.
