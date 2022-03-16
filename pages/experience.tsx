@@ -57,7 +57,7 @@ export default function Experience() {
                                         Expected Graduation: May 2022
                                     </motion.p>
                                     <motion.p>
-                                        {'CGPA: 10.25 A- '}
+                                        {'CGPA: 10.5 A- '}
                                         <motion.a
                                             className={styles.a}
                                             href='https://carleton.ca/academicadvising/cgpas/'
