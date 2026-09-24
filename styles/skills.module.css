@@ -1,46 +1,183 @@
 .title {
-    @apply pb-10;
+    @apply pb-6;
 }
 
-.skillsGrid {
+/* Inspect readout */
+.inspectWrap {
+    @apply w-11/12;
+    @apply mx-auto;
+    @apply mb-10;
+    max-width: 42rem;
+    min-height: 9.5rem;
+}
+
+.inspect {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
+    @apply rounded-xl;
+    @apply px-6;
+    @apply py-5;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.inspectHeader {
+    @apply flex;
+    @apply flex-wrap;
+    @apply items-baseline;
+    @apply gap-x-4;
+    @apply gap-y-1;
+    @apply mb-3;
+}
+
+.inspectName {
+    @apply text-2xl;
+    @apply font-bold;
+}
+
+.inspectMeta {
+    @apply text-sm;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.inspectBlurb {
+    @apply mt-3;
+    @apply text-base;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.inspectIdle {
+    @apply text-base;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.prompt {
+    color: #86efac;
+}
+
+/* XP bars */
+.xpBar {
+    @apply flex;
+    @apply gap-1;
+}
+
+.xpBarLarge {
+    @apply flex;
+    @apply gap-1.5;
+}
+
+.xpSegment {
+    @apply block;
+    @apply rounded-sm;
+    width: 1.4rem;
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.xpBarLarge .xpSegment {
+    width: 2.2rem;
+    height: 0.65rem;
+}
+
+/* Branch grid */
+.tree {
     @apply grid;
     @apply gap-6;
     @apply w-11/12;
     @apply mx-auto;
-    @apply pb-16;
+    @apply pb-8;
 }
 
 @media (min-width: 768px) {
-    .skillsGrid {
+    .tree {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.skillCard {
+.branch {
+    --accent: #7dd3fc;
     background-color: rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--accent);
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.35);
     @apply rounded-xl;
     @apply p-6;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.skillCardTitle {
+.branch:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5),
+        0 0 18px -6px var(--accent);
+    transform: translateY(-2px);
+}
+
+.branchHeader {
+    @apply mb-5;
+}
+
+.branchTitle {
     @apply text-2xl;
     @apply font-bold;
-    @apply pb-4;
-    color: #93c5fd;
+    color: var(--accent);
 }
 
+.branchTagline {
+    @apply text-sm;
+    @apply italic;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Skill nodes */
 .skillList {
     @apply flex;
-    @apply flex-wrap;
+    @apply flex-col;
     @apply gap-2;
+    list-style: none;
+    @apply m-0;
+    @apply p-0;
 }
 
-.skillPill {
-    background-color: rgba(0, 127, 177, 0.35);
-    border: 1px solid rgba(125, 211, 252, 0.25);
-    @apply rounded-full;
-    @apply px-3;
-    @apply py-1;
+.skillNode {
+    @apply w-full;
+    @apply flex;
+    @apply items-center;
+    @apply justify-between;
+    @apply gap-4;
+    @apply rounded-lg;
+    @apply px-4;
+    @apply py-2.5;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.skillNode:hover,
+.skillNode:focus-visible {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-color: var(--accent);
+    transform: translateX(4px);
+    outline: none;
+}
+
+.skillNodeActive {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-color: var(--accent);
+}
+
+.skillName {
+    @apply text-base;
+    @apply font-medium;
+    @apply text-left;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.footnote {
+    @apply text-center;
     @apply text-sm;
+    @apply italic;
+    @apply pb-16;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
