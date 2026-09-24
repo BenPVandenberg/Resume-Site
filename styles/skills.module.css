@@ -2,17 +2,45 @@
     @apply pb-10;
 }
 
-/* automatically determine number of columns  */
-.gridContainer {
+.skillsGrid {
     @apply grid;
-    grid-template-columns: repeat(auto-fit, 1fr);
-    grid-gap: 10px;
+    @apply gap-6;
     @apply w-11/12;
     @apply mx-auto;
+    @apply pb-16;
 }
 
 @media (min-width: 768px) {
-    .gridContainer {
-        grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.skillCard {
+    background-color: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    @apply rounded-xl;
+    @apply p-6;
+}
+
+.skillCardTitle {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply pb-4;
+    color: #93c5fd;
+}
+
+.skillList {
+    @apply flex;
+    @apply flex-wrap;
+    @apply gap-2;
+}
+
+.skillPill {
+    background-color: rgba(0, 127, 177, 0.35);
+    border: 1px solid rgba(125, 211, 252, 0.25);
+    @apply rounded-full;
+    @apply px-3;
+    @apply py-1;
+    @apply text-sm;
 }
