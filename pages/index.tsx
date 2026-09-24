@@ -43,7 +43,7 @@ export default function Home() {
                             <motion.div>
                                 <a
                                     className={`${styles.social} ${styles.resumeButton}`}
-                                    href='static/docs/BEN_VANDENBERG.pdf'
+                                    href='/static/docs/BEN_VANDENBERG.pdf'
                                 >
                                     Resume
                                 </a>

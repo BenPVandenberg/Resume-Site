@@ -26,6 +26,7 @@ export default function Navbar(props: NavbarProps) {
             <button
                 className='inline-flex p-3 hover:bg-blue-300 rounded sm:hidden ml-auto outline-none'
                 onClick={handleClick}
+                aria-label='Toggle navigation menu'
             >
                 <svg
                     className='w-6 h-6'
