@@ -2,26 +2,42 @@
     @apply pb-6;
 }
 
-/* Inspect readout */
-.inspectWrap {
+/* Two-column layout on desktop: sticky details panel + branches */
+.layout {
     @apply w-11/12;
     @apply mx-auto;
-    @apply mb-10;
-    max-width: 42rem;
-    min-height: 9.5rem;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-8;
+    @apply pb-8;
+    max-width: 80rem;
 }
 
-.inspect {
+@media (min-width: 1024px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 21rem 1fr;
+        align-items: start;
+    }
+
+    .detailsCol {
+        position: sticky;
+        top: 6rem;
+    }
+}
+
+/* Details panel */
+.details {
     background-color: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
     @apply rounded-xl;
     @apply px-6;
     @apply py-5;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    min-height: 10rem;
 }
 
-.inspectHeader {
+.detailsHeader {
     @apply flex;
     @apply flex-wrap;
     @apply items-baseline;
@@ -30,43 +46,39 @@
     @apply mb-3;
 }
 
-.inspectName {
+.detailsName {
     @apply text-2xl;
     @apply font-bold;
 }
 
-.inspectMeta {
+.detailsMeta {
     @apply text-sm;
     color: rgba(255, 255, 255, 0.55);
 }
 
-.inspectBlurb {
+.detailsBlurb {
     @apply mt-3;
     @apply text-base;
     color: rgba(255, 255, 255, 0.85);
 }
 
-.inspectIdle {
+.detailsIdle {
     @apply text-base;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.prompt {
-    color: #86efac;
-}
-
-/* XP bars */
-.xpBar {
+/* Level bars */
+.levelBar {
     @apply flex;
     @apply gap-1;
 }
 
-.xpBarLarge {
+.levelBarLarge {
     @apply flex;
     @apply gap-1.5;
 }
 
-.xpSegment {
+.levelSegment {
     @apply block;
     @apply rounded-sm;
     width: 1.4rem;
@@ -74,22 +86,20 @@
     background-color: rgba(255, 255, 255, 0.14);
 }
 
-.xpBarLarge .xpSegment {
+.levelBarLarge .levelSegment {
     width: 2.2rem;
     height: 0.65rem;
 }
 
 /* Branch grid */
-.tree {
+.branches {
     @apply grid;
     @apply gap-6;
-    @apply w-11/12;
-    @apply mx-auto;
-    @apply pb-8;
+    @apply w-full;
 }
 
 @media (min-width: 768px) {
-    .tree {
+    .branches {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -127,7 +137,7 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Skill nodes */
+/* Skill rows */
 .skillList {
     @apply flex;
     @apply flex-col;
@@ -137,7 +147,7 @@
     @apply p-0;
 }
 
-.skillNode {
+.skillRow {
     @apply w-full;
     @apply flex;
     @apply items-center;
@@ -153,15 +163,15 @@
         transform 0.18s ease;
 }
 
-.skillNode:hover,
-.skillNode:focus-visible {
+.skillRow:hover,
+.skillRow:focus-visible {
     background-color: rgba(255, 255, 255, 0.09);
     border-color: var(--accent);
     transform: translateX(4px);
     outline: none;
 }
 
-.skillNodeActive {
+.skillRowActive {
     background-color: rgba(255, 255, 255, 0.09);
     border-color: var(--accent);
 }
@@ -179,5 +189,4 @@
     @apply italic;
     @apply pb-16;
     color: rgba(255, 255, 255, 0.4);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
