@@ -101,19 +101,6 @@ a.questName:hover {
     text-decoration: underline;
 }
 
-.questBadge {
-    @apply text-xs;
-    @apply font-bold;
-    @apply uppercase;
-    @apply tracking-wider;
-    @apply rounded-full;
-    @apply px-2.5;
-    @apply py-0.5;
-    border: 1px solid;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    white-space: nowrap;
-}
-
 .questRole {
     @apply text-base;
     color: rgba(255, 255, 255, 0.85);

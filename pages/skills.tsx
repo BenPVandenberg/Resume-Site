@@ -8,7 +8,7 @@ import { PATHS, TITLE_ANIMATION } from '../utilities/constants';
 
 interface Skill {
     name: string;
-    xp: number; // 1 - 5
+    level: number; // 1 - 5
     blurb: string;
 }
 
@@ -20,8 +20,8 @@ interface Branch {
     skills: Skill[];
 }
 
-// Tweak xp/blurb freely — 5 = Mastered, 1 = Hello, world
-const TREE: Branch[] = [
+// Tweak level/blurb freely — 5 = strongest, 1 = lightest touch
+const BRANCHES: Branch[] = [
     {
         id: 'languages',
         title: 'Languages',
@@ -30,27 +30,27 @@ const TREE: Branch[] = [
         skills: [
             {
                 name: 'Go',
-                xp: 5,
+                level: 5,
                 blurb: 'My daily driver. Goroutines make concurrency feel like a superpower.',
             },
             {
                 name: 'Python',
-                xp: 4,
+                level: 4,
                 blurb: 'The trusty multi-tool — scripts, APIs, and everything in between.',
             },
             {
                 name: 'TypeScript / JavaScript',
-                xp: 4,
+                level: 4,
                 blurb: "The web's mother tongue, with types to keep me honest.",
             },
             {
                 name: 'Java',
-                xp: 3,
+                level: 3,
                 blurb: 'Battle-tested and verbose. We have an understanding.',
             },
             {
                 name: 'Perl',
-                xp: 2,
+                level: 2,
                 blurb: 'Read more than written. Respect for the elders.',
             },
         ],
@@ -63,22 +63,22 @@ const TREE: Branch[] = [
         skills: [
             {
                 name: 'React',
-                xp: 4,
+                level: 4,
                 blurb: 'Components all the way down.',
             },
             {
                 name: 'Node.js',
-                xp: 4,
+                level: 4,
                 blurb: 'JavaScript, unleashed from the browser.',
             },
             {
                 name: 'Express.js',
-                xp: 3,
+                level: 3,
                 blurb: 'APIs without the ceremony.',
             },
             {
                 name: 'Electron',
-                xp: 2,
+                level: 2,
                 blurb: 'Desktop apps wearing a web costume.',
             },
         ],
@@ -91,17 +91,17 @@ const TREE: Branch[] = [
         skills: [
             {
                 name: 'REST APIs',
-                xp: 4,
+                level: 4,
                 blurb: 'The lingua franca of the web.',
             },
             {
                 name: 'MySQL',
-                xp: 3,
+                level: 3,
                 blurb: 'SELECT * FROM competence.',
             },
             {
                 name: 'SSL / TLS',
-                xp: 3,
+                level: 3,
                 blurb: 'Keeping the padlock closed.',
             },
         ],
@@ -109,22 +109,22 @@ const TREE: Branch[] = [
     {
         id: 'focus',
         title: 'Focus Areas',
-        tagline: 'What I obsess over',
+        tagline: 'What I care about',
         accent: '#fcd34d',
         skills: [
             {
                 name: 'Computer & Internet Security',
-                xp: 5,
+                level: 5,
                 blurb: 'My degree and my hobby. Trust, but verify.',
             },
             {
                 name: 'CLI Tooling',
-                xp: 4,
+                level: 4,
                 blurb: 'If I do it twice, it gets a command.',
             },
             {
                 name: 'Automation',
-                xp: 4,
+                level: 4,
                 blurb: 'Laziness, engineered.',
             },
         ],
@@ -132,11 +132,11 @@ const TREE: Branch[] = [
 ];
 
 const LEVEL_NAMES: Record<number, string> = {
-    5: 'Mastered',
+    5: 'Expert',
     4: 'Proficient',
     3: 'Comfortable',
-    2: 'Dabbled',
-    1: 'Hello, world',
+    2: 'Familiar',
+    1: 'Learning',
 };
 
 interface ActiveSkill {
@@ -144,14 +144,14 @@ interface ActiveSkill {
     skill: Skill;
 }
 
-function XpBar({ xp, accent, large }: { xp: number; accent: string; large?: boolean }) {
+function LevelBar({ level, accent, large }: { level: number; accent: string; large?: boolean }) {
     return (
-        <div className={large ? styles.xpBarLarge : styles.xpBar} aria-label={`${xp} out of 5`}>
+        <div className={large ? styles.levelBarLarge : styles.levelBar} aria-label={`${level} out of 5`}>
             {Array.from({ length: 5 }).map((_, i) => (
                 <motion.span
                     key={i}
-                    className={styles.xpSegment}
-                    style={i < xp ? { backgroundColor: accent } : undefined}
+                    className={styles.levelSegment}
+                    style={i < level ? { backgroundColor: accent } : undefined}
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.15 + i * 0.07, type: 'spring', stiffness: 400, damping: 18 }}
@@ -164,14 +164,10 @@ function XpBar({ xp, accent, large }: { xp: number; accent: string; large?: bool
 export default function Skills() {
     const [active, setActive] = useState<ActiveSkill | null>(null);
 
-    const stats = useMemo(() => {
-        const skillCount = TREE.reduce((n, b) => n + b.skills.length, 0);
-        const totalXp = TREE.reduce(
-            (n, b) => n + b.skills.reduce((m, s) => m + s.xp, 0),
-            0
-        );
-        return { skillCount, totalXp };
-    }, []);
+    const skillCount = useMemo(
+        () => BRANCHES.reduce((n, b) => n + b.skills.length, 0),
+        []
+    );
 
     return (
         <main>
@@ -179,7 +175,7 @@ export default function Skills() {
                 <title>Ben Vandenberg: Skills</title>
                 <meta
                     name='description'
-                    content='An interactive skill tree of the languages, tools, and focus areas I work with.'
+                    content='The languages, tools, and focus areas I work with.'
                 />
             </Head>
 
@@ -195,130 +191,127 @@ export default function Skills() {
                         <motion.h1
                             className={`${sharedStyles.title} ${styles.title}`}
                         >
-                            Skill Tree
+                            Skills
                         </motion.h1>
 
                         <motion.p className={sharedStyles.description}>
-                            {stats.skillCount} skills unlocked ·{' '}
-                            {stats.totalXp} XP invested · Build: Full-Stack
-                            Generalist
+                            {skillCount} languages, tools, and focus areas I
+                            work with.
                         </motion.p>
                     </motion.div>
 
-                    {/* Inspect readout */}
-                    <div className={styles.inspectWrap}>
-                        <AnimatePresence exitBeforeEnter>
-                            <motion.div
-                                key={active ? active.skill.name : 'idle'}
-                                className={styles.inspect}
-                                initial={{ opacity: 0, y: 8 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -8 }}
-                                transition={{ duration: 0.18 }}
-                            >
-                                {active ? (
-                                    <>
-                                        <div className={styles.inspectHeader}>
-                                            <span
-                                                className={styles.inspectName}
-                                                style={{ color: active.branch.accent }}
-                                            >
-                                                {active.skill.name}
-                                            </span>
-                                            <span className={styles.inspectMeta}>
-                                                {active.branch.title} ·{' '}
-                                                {LEVEL_NAMES[active.skill.xp]}
-                                            </span>
-                                        </div>
-                                        <XpBar
-                                            xp={active.skill.xp}
-                                            accent={active.branch.accent}
-                                            large
-                                        />
-                                        <p className={styles.inspectBlurb}>
-                                            {active.skill.blurb}
-                                        </p>
-                                    </>
-                                ) : (
-                                    <p className={styles.inspectIdle}>
-                                        <span className={styles.prompt}>
-                                            $ inspect --skill
-                                        </span>{' '}
-                                        — hover or tap a skill to inspect it.
-                                    </p>
-                                )}
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
-
-                    {/* Branches */}
-                    <div className={styles.tree}>
-                        {TREE.map((branch, branchIndex) => (
-                            <motion.section
-                                key={branch.id}
-                                className={styles.branch}
-                                style={{ ['--accent' as string]: branch.accent }}
-                                initial={{ opacity: 0, y: 32, scale: 0.97 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                transition={{
-                                    delay: 0.35 + branchIndex * 0.12,
-                                    type: 'spring',
-                                    stiffness: 120,
-                                    damping: 16,
-                                }}
-                            >
-                                <header className={styles.branchHeader}>
-                                    <h2 className={styles.branchTitle}>
-                                        {branch.title}
-                                    </h2>
-                                    <p className={styles.branchTagline}>
-                                        {branch.tagline}
-                                    </p>
-                                </header>
-                                <ul className={styles.skillList}>
-                                    {branch.skills.map((skill) => {
-                                        const isActive =
-                                            active?.skill.name === skill.name;
-                                        return (
-                                            <li key={skill.name}>
-                                                <button
-                                                    type='button'
-                                                    className={`${styles.skillNode} ${
-                                                        isActive
-                                                            ? styles.skillNodeActive
-                                                            : ''
-                                                    }`}
-                                                    onMouseEnter={() =>
-                                                        setActive({ branch, skill })
-                                                    }
-                                                    onFocus={() =>
-                                                        setActive({ branch, skill })
-                                                    }
-                                                    onClick={() =>
-                                                        setActive({ branch, skill })
-                                                    }
+                    <div className={styles.layout}>
+                        {/* Details panel */}
+                        <aside className={styles.detailsCol}>
+                            <AnimatePresence exitBeforeEnter>
+                                <motion.div
+                                    key={active ? active.skill.name : 'idle'}
+                                    className={styles.details}
+                                    initial={{ opacity: 0, y: 8 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -8 }}
+                                    transition={{ duration: 0.18 }}
+                                >
+                                    {active ? (
+                                        <>
+                                            <div className={styles.detailsHeader}>
+                                                <span
+                                                    className={styles.detailsName}
+                                                    style={{ color: active.branch.accent }}
                                                 >
-                                                    <span
-                                                        className={styles.skillName}
+                                                    {active.skill.name}
+                                                </span>
+                                                <span className={styles.detailsMeta}>
+                                                    {active.branch.title} ·{' '}
+                                                    {LEVEL_NAMES[active.skill.level]}
+                                                </span>
+                                            </div>
+                                            <LevelBar
+                                                level={active.skill.level}
+                                                accent={active.branch.accent}
+                                                large
+                                            />
+                                            <p className={styles.detailsBlurb}>
+                                                {active.skill.blurb}
+                                            </p>
+                                        </>
+                                    ) : (
+                                        <p className={styles.detailsIdle}>
+                                            Hover or tap a skill to see more
+                                            about it.
+                                        </p>
+                                    )}
+                                </motion.div>
+                            </AnimatePresence>
+                        </aside>
+
+                        {/* Branches */}
+                        <div className={styles.branches}>
+                            {BRANCHES.map((branch, branchIndex) => (
+                                <motion.section
+                                    key={branch.id}
+                                    className={styles.branch}
+                                    style={{ ['--accent' as string]: branch.accent }}
+                                    initial={{ opacity: 0, y: 32, scale: 0.97 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    transition={{
+                                        delay: 0.35 + branchIndex * 0.12,
+                                        type: 'spring',
+                                        stiffness: 120,
+                                        damping: 16,
+                                    }}
+                                >
+                                    <header className={styles.branchHeader}>
+                                        <h2 className={styles.branchTitle}>
+                                            {branch.title}
+                                        </h2>
+                                        <p className={styles.branchTagline}>
+                                            {branch.tagline}
+                                        </p>
+                                    </header>
+                                    <ul className={styles.skillList}>
+                                        {branch.skills.map((skill) => {
+                                            const isActive =
+                                                active?.skill.name === skill.name;
+                                            return (
+                                                <li key={skill.name}>
+                                                    <button
+                                                        type='button'
+                                                        className={`${styles.skillRow} ${
+                                                            isActive
+                                                                ? styles.skillRowActive
+                                                                : ''
+                                                        }`}
+                                                        onMouseEnter={() =>
+                                                            setActive({ branch, skill })
+                                                        }
+                                                        onFocus={() =>
+                                                            setActive({ branch, skill })
+                                                        }
+                                                        onClick={() =>
+                                                            setActive({ branch, skill })
+                                                        }
                                                     >
-                                                        {skill.name}
-                                                    </span>
-                                                    <XpBar
-                                                        xp={skill.xp}
-                                                        accent={branch.accent}
-                                                    />
-                                                </button>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </motion.section>
-                        ))}
+                                                        <span
+                                                            className={styles.skillName}
+                                                        >
+                                                            {skill.name}
+                                                        </span>
+                                                        <LevelBar
+                                                            level={skill.level}
+                                                            accent={branch.accent}
+                                                        />
+                                                    </button>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </motion.section>
+                            ))}
+                        </div>
                     </div>
 
-                    <p className={styles.footnote}>
-                        Respec available on request.
-                    </p>
+                    <p className={styles.footnote}>Always learning.</p>
                 </div>
             </div>
         </main>

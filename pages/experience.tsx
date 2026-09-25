@@ -22,15 +22,15 @@ interface Quest {
     defaultOpen?: boolean;
 }
 
-const TYPE_META: Record<QuestType, { label: string; color: string }> = {
-    tutorial: { label: 'Tutorial', color: '#7dd3fc' },
-    main: { label: 'Main Quest', color: '#fcd34d' },
-    side: { label: 'Side Quest', color: '#f0abfc' },
+const TYPE_COLORS: Record<QuestType, string> = {
+    tutorial: '#7dd3fc',
+    main: '#fcd34d',
+    side: '#f0abfc',
 };
 
 const QUESTS: { section: string; quests: Quest[] }[] = [
     {
-        section: 'Tutorial',
+        section: 'Education',
         quests: [
             {
                 id: 'carleton',
@@ -46,7 +46,7 @@ const QUESTS: { section: string; quests: Quest[] }[] = [
         ],
     },
     {
-        section: 'Main Quests',
+        section: 'Work Experience',
         quests: [
             {
                 id: 'irdeto',
@@ -99,7 +99,7 @@ const QUESTS: { section: string; quests: Quest[] }[] = [
         ],
     },
     {
-        section: 'Side Quests',
+        section: 'Personal Projects',
         quests: [
             {
                 id: 'tap',
@@ -169,12 +169,12 @@ const QUESTS: { section: string; quests: Quest[] }[] = [
 
 function QuestCard({ quest, index }: { quest: Quest; index: number }) {
     const [open, setOpen] = useState(!!quest.defaultOpen);
-    const meta = TYPE_META[quest.type];
+    const accent = TYPE_COLORS[quest.type];
 
     return (
         <motion.article
             className={styles.quest}
-            style={{ ['--accent' as string]: meta.color }}
+            style={{ ['--accent' as string]: accent }}
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -212,21 +212,12 @@ function QuestCard({ quest, index }: { quest: Quest; index: number }) {
                                 {quest.name}
                             </span>
                         )}
-                        <span
-                            className={styles.questBadge}
-                            style={{
-                                color: meta.color,
-                                borderColor: meta.color,
-                            }}
-                        >
-                            {meta.label}
-                        </span>
                     </div>
                     <p className={styles.questRole}>{quest.role}</p>
                     <p className={styles.questDates}>{quest.dates}</p>
                     {quest.loot.length > 0 && (
                         <div className={styles.loot}>
-                            <span className={styles.lootLabel}>Loot:</span>
+                            <span className={styles.lootLabel}>Tech:</span>
                             {quest.loot.map((item) => (
                                 <span
                                     key={item}
@@ -241,7 +232,7 @@ function QuestCard({ quest, index }: { quest: Quest; index: number }) {
                 <span className={styles.toggle} aria-hidden='true'>
                     {open ? '▾' : '▸'}{' '}
                     <span className={styles.toggleLabel}>
-                        {quest.objectives.length} objective
+                        {quest.objectives.length} highlight
                         {quest.objectives.length === 1 ? '' : 's'}
                     </span>
                 </span>
@@ -298,17 +289,13 @@ function QuestCard({ quest, index }: { quest: Quest; index: number }) {
 }
 
 export default function Experience() {
-    const counts = QUESTS.map(
-        (s) => `${s.quests.length} ${s.section.toLowerCase()}`
-    ).join(' · ');
-
     return (
         <main>
             <Head>
                 <title>Ben Vandenberg: Experience</title>
                 <meta
                     name='description'
-                    content='A quest log of my cumulative experience'
+                    content='My education, work experience, and personal projects'
                 />
             </Head>
 
@@ -324,12 +311,12 @@ export default function Experience() {
                         <motion.h1
                             className={`${sharedStyles.title} ${styles.title}`}
                         >
-                            Quest Log
+                            Experience
                         </motion.h1>
 
                         <motion.p className={sharedStyles.description}>
-                            {counts} completed. Click a quest to review its
-                            objectives.
+                            Where I&apos;ve studied, worked, and built.
+                            Select an entry to see the highlights.
                         </motion.p>
                     </motion.div>
 
@@ -354,7 +341,7 @@ export default function Experience() {
                     ))}
 
                     <p className={styles.footnote}>
-                        New quests loading… check back for the next chapter.
+                        More to come.
                     </p>
                 </div>
             </div>
