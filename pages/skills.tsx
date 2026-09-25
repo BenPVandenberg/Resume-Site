@@ -20,7 +20,8 @@ interface Branch {
     skills: Skill[];
 }
 
-// Tweak level/blurb freely — 5 = strongest, 1 = lightest touch
+// Tweak freely: levels are 1-5 (5 = strongest). Rename the Meta-internal
+// tooling entries below to their real names if you want them public.
 const BRANCHES: Branch[] = [
     {
         id: 'languages',
@@ -29,29 +30,29 @@ const BRANCHES: Branch[] = [
         accent: '#7dd3fc',
         skills: [
             {
-                name: 'Go',
+                name: 'PHP / Hack',
                 level: 5,
-                blurb: 'My daily driver. Goroutines make concurrency feel like a superpower.',
+                blurb: "My daily driver. Hack's type system keeps a very large codebase honest.",
             },
             {
-                name: 'Python',
-                level: 4,
-                blurb: 'The trusty multi-tool — scripts, APIs, and everything in between.',
-            },
-            {
-                name: 'TypeScript / JavaScript',
+                name: 'JavaScript / TypeScript',
                 level: 4,
                 blurb: "The web's mother tongue, with types to keep me honest.",
             },
             {
-                name: 'Java',
-                level: 3,
-                blurb: 'Battle-tested and verbose. We have an understanding.',
+                name: 'Rust',
+                level: 4,
+                blurb: 'The borrow checker and I are friends now.',
             },
             {
-                name: 'Perl',
-                level: 2,
-                blurb: 'Read more than written. Respect for the elders.',
+                name: 'C++',
+                level: 4,
+                blurb: 'Where performance matters and every byte is accounted for.',
+            },
+            {
+                name: 'Python',
+                level: 4,
+                blurb: 'The trusty multi-tool — scripts, tooling, and everything in between.',
             },
         ],
     },
@@ -63,23 +64,13 @@ const BRANCHES: Branch[] = [
         skills: [
             {
                 name: 'React',
-                level: 4,
+                level: 5,
                 blurb: 'Components all the way down.',
             },
             {
-                name: 'Node.js',
+                name: 'Next.js',
                 level: 4,
-                blurb: 'JavaScript, unleashed from the browser.',
-            },
-            {
-                name: 'Express.js',
-                level: 3,
-                blurb: 'APIs without the ceremony.',
-            },
-            {
-                name: 'Electron',
-                level: 2,
-                blurb: 'Desktop apps wearing a web costume.',
+                blurb: 'This very site runs on it.',
             },
         ],
     },
@@ -90,19 +81,24 @@ const BRANCHES: Branch[] = [
         accent: '#86efac',
         skills: [
             {
-                name: 'REST APIs',
+                name: 'SQL',
                 level: 4,
-                blurb: 'The lingua franca of the web.',
-            },
-            {
-                name: 'MySQL',
-                level: 3,
                 blurb: 'SELECT * FROM competence.',
             },
             {
-                name: 'SSL / TLS',
+                name: 'Data pipelines',
+                level: 4,
+                blurb: 'Moving data reliably at scale.',
+            },
+            {
+                name: 'Logging frameworks',
+                level: 4,
+                blurb: "If it isn't logged, it didn't happen.",
+            },
+            {
+                name: 'Networking',
                 level: 3,
-                blurb: 'Keeping the padlock closed.',
+                blurb: 'Packets in, packets out — respecting the layers below.',
             },
         ],
     },
@@ -113,9 +109,9 @@ const BRANCHES: Branch[] = [
         accent: '#fcd34d',
         skills: [
             {
-                name: 'Computer & Internet Security',
+                name: 'Security infrastructure',
                 level: 5,
-                blurb: 'My degree and my hobby. Trust, but verify.',
+                blurb: 'My degree, my hobby, and my day job.',
             },
             {
                 name: 'CLI Tooling',
